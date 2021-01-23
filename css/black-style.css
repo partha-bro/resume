@@ -1,19 +1,19 @@
 /* Style all font awesome icons */
-        .fa {
-        padding: 10px;
-        font-size: 20px;
-        width: 50px;
-        text-align: center;
-        text-decoration: none;
-        }
+.fa {
+padding: 10px;
+font-size: 20px;
+width: 50px;
+text-align: center;
+text-decoration: none;
+}
 
-        /* Add a hover effect if you want */
-        .fa:hover {
-        opacity: 0.7;
-        }
+/* Add a hover effect if you want */
+.fa:hover {
+opacity: 0.7;
+}
 body{
 	background-color: black;
-	color: yellow;
+        color: yellow;
 }
 table.table,thead,tbody{
 	background-color: black;
