@@ -16,8 +16,9 @@
     <link rel="stylesheet" type="text/css" href="css/white-style.css">
 
     <script type="text/javascript">
-        function themeChange(){
-            var theme = document.getElementById('theme').innerHTML;
+        var theme = document.getElementById('theme').innerHTML;
+        function themeChange( t ){
+            theme = t;
             if (theme == 'Dark') {
                 document.querySelector("link[href='css/white-style.css']").href = "css/black-style.css";
                 document.getElementById('theme').innerHTML = "Light";
@@ -26,9 +27,19 @@
                 document.getElementById('theme').innerHTML = "Dark";
             }
         }
+
+        function applyTheme() {
+            // body...
+            theme = document.getElementById('theme').innerHTML;
+            var x = confirm('Apply '+ theme +' theme for '+ theme +' mode.');
+            console.log(x);
+            if (x) {
+                themeChange(theme);
+            }
+        }
     </script>
   </head>
-  <body>
+  <body onload="applyTheme()">
 
 
 
@@ -36,7 +47,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-success" > <!-- style="background-color:#563d7b" -->
                 <a class=" col-md-2 navbar-brand text-white fa fa-paste" id="logo" href="#"><b>&nbsp;RESUME</b></a>
                 <!-- <a class="text-white"><b>Theme:</b></a> -->
-                <button class="btn text-white" id="theme" onclick="themeChange();" title="Change Theme">Dark</button>
+                <button class="btn text-white" id="theme" onclick="applyTheme();" title="Change Theme">Dark</button>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -58,6 +69,7 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="#details"><b>Details</b></a>
                             </li>
+                            <li class="nav-item">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle text-white" type="button" data-toggle="dropdown"><b>Contact me:</b>
                                 <span class="caret"></span></button>
@@ -85,10 +97,11 @@
                                     </li>
                                 </ul>
                             </div>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <b>Download PDF: </b><a class="nav-link text-dark btn btn-warning fa fa-download "  href="http://parthainfo.epizy.com/file/Resume_with_photo_v-2.pdf"></a>
+                        <b>Download PDF: </b><a class="nav-link text-dark btn btn-warning fa fa-download "  href="http://partha-bro.github.com/resume/file/Resume-ParthaInfo.pdf"></a>
                     </div>
                 </div>
             </nav>
@@ -97,8 +110,8 @@
                 <div class="col-md-6 col-sm-5 border border-dark rounded-lg" style="margin-top:5px;">
                     <strong>Partha Sarathi Parida<br/><br/>
                             B.Tech , Computer Science Engineering<br/><br/>             
-                            Contact No. : - 7011483096<br/><br/>
-                            E-mail :-  sarathi.partha95@gmail.com
+                            Contact No. : - <a href="tel:+917011483096" title="click to call">7011483096</a><br/><br/>
+                            E-mail :-  <a href="mailto:sarathi.partha95@gmail.com" title="click to mail">sarathi.partha95@gmail.com</a>
                     </strong>
                 </div>
                 <div class="col-md-3 col-sm-3">
@@ -166,27 +179,52 @@
                 </div>
                 <div class="col-md-6">
                     <h4 class="bg-success" id="profile">&nbsp;IT PROFICIENCY</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">HTML</li>
-                        <li class="list-group-item">CSS</li>
-                        <li class="list-group-item">Javascript</li>
-                        <li class="list-group-item">Php</li>
-                        <li class="list-group-item">Mysql</li>
-                        <li class="list-group-item">AJAX</li>
-                        <li class="list-group-item">Bootstrap</li>
-                        <li class="list-group-item">Git Version Control</li>
-                        <li class="list-group-item">Xampp server</li>
-                        <li class="list-group-item">Shell scripting on linux (for automation installation of portal.)</li>
-                        <li class="list-group-item">Working on web hosting like godaddy.</li>
-                    </ul><br/>
+                    
+                        <div class="row">
+                            <div class='col-md-6'>
+                                    <h5> Front End :</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">HTML</li>
+                                        <li class="list-group-item">CSS</li>
+                                        <li class="list-group-item">Javascript</li>
+                                        <li class="list-group-item">Bootstrap</li>
+                                    </ul>
+                            </div>
+                            <div class='col-md-6'>
+                                <h5> Back End :</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Php</li>
+                                    <li class="list-group-item">laravel</li>
+                                    <li class="list-group-item">Mysql</li>
+                                    <li class="list-group-item">AJAX</li>
+                                </ul>
+                            </div>
+                            <div class='col-md-6'>
+                                <h5> OS/Control System :</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Git</li>
+                                    <li class="list-group-item">GIMP - Image Editing</li>
+                                    <li class="list-group-item">Ubuntu, Shell scripting</li>
+                                </ul>
+                            </div>
+                            <div class='col-md-6'>
+                                <h5> Web Hosting :</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Godaddy/Hostinger/InfinityFree</li>
+                                    <li class="list-group-item">Xampp server on windows</li>
+                                    <li class="list-group-item">Lamp server on Ubuntu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    <br/>
                 </div>
-                <div id='stock' class="col-md-6">
+                 <div id='stock' class="col-md-6">
                     <!-- Stock Value -->
- 
-                     <p class="sc-embed" data-width="100%" data-orders="%5B%7B%22quantity%22%3A10%2C%22ticker%22%3A%22TATAMOTORS%22%7D%5D" data-cardsize="big" data-withtt="false" data-withsearch="true" style="width:100%;min-height:100%;display:flex;align-items:center;justify-content:center"> <strong>loading widget to trade TATAMOTORS</strong> </p> <script async src="https://www.gateway-tt.in/assets/embed.js"></script>
+                    <h4 class="bg-success" title="Embed of stock live from https://api.tickertape.in">&nbsp;SHARE MARKET Embed</h4>
+                     <p class="sc-embed" title="Embed from https://api.tickertape.in" data-width="100%" data-orders="%5B%7B%22quantity%22%3A10%2C%22ticker%22%3A%22TATAMOTORS%22%7D%5D" data-cardsize="big" data-withtt="false" data-withsearch="true" style="width:100%;min-height:100%;display:flex;align-items:center;justify-content:center"> <strong>loading widget to trade TATAMOTORS</strong> </p> <script async src="https://www.gateway-tt.in/assets/embed.js"></script>
 
                     <!-- End Stock Value -->
-                </div>
+                </div> 
                 <div class="col-md-12 ">
                     <h4 class="bg-success">&nbsp;INTERPERSONAL SKILL</h4>
                     <ul class="list-group">
@@ -313,7 +351,9 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="col-md-6 ">
-                <h4 class="bg-success" id="details">&nbsp;PERSONAL DETAILS</h4>
+                    <h4 class="bg-success" id="details">&nbsp;PERSONAL DETAILS</h4>
+                
+                 
                 <ul class="list-group">
                     <li class="list-group-item"><b>Father's Name</b>:-   Mr. Pravakar Parida</li>
                     <li class="list-group-item"><b>Date of Birth</b>:-   12<sup>th</sup>May 1995   </li>
@@ -324,8 +364,29 @@
                 </ul>
                 </div>
                 <div class="col-md-6 ">
-                    <h4 class="bg-success">&nbsp;HOME MAP</h4>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7502.111487785683!2d85.92313357265127!3d19.922055646432398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19bfe17123d477%3A0xf1b5d372cd4c6fe6!2sBaliput%2C%20Odisha%20752045!5e0!3m2!1sen!2sin!4v1568807704977!5m2!1sen!2sin" width="600" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <h4 class="bg-success" title="Embed a map">&nbsp;HOME MAP ON GOOGLE</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7502.111487785683!2d85.92313357265127!3d19.922055646432398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19bfe17123d477%3A0xf1b5d372cd4c6fe6!2sBaliput%2C%20Odisha%20752045!5e0!3m2!1sen!2sin!4v1568807704977!5m2!1sen!2sin" width="600" height="300" frameborder="0" style="border:0;" allowfullscreen="" title="Barbil location Embed a map from google"></iframe>
+                </div>
+            </div>
+
+            <!-- footer -->
+            <div class="row">
+                <div class="col-md-12 ">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="col-md-12 ">
+                    <h4 class="bg-success">&nbsp;DECLARATION</h4>
+                    <p>I do hereby declare that the above information is true to the best of my knowledge.</p>
+                </div>
+                
+                <div class="col-md-4">
+                    <p><b>Date: <?= date('d-m-Y'); ?></b> </p>
+                </div>
+                <div class="col-md-4" align="center">
+                    <small>&copy; 2017-<?= date('Y'); ?> Partha-bro.github.com </small>
+                </div>
+                <div class="col-md-4" align="right">
+                    <p><b>Sign:</b> Partha Sarathi Parida</p>
                 </div>
             </div>
     </div>
