@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" href="css/white-style.css">
 
     <script type="text/javascript">
+        window.onload = function() {
+          applyTheme();
+        };
         var theme = document.getElementById('theme').innerHTML;
         function themeChange( t ){
             theme = t;
@@ -39,7 +42,7 @@
         }
     </script>
   </head>
-  <body onload="applyTheme()">
+  <body>
 
 
 
@@ -177,7 +180,7 @@
                 <div class="col-md-12 ">
                     &nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h4 class="bg-success" id="profile">&nbsp;IT PROFICIENCY</h4>
                     
                         <div class="row">
@@ -218,13 +221,13 @@
                         </div>
                     <br/>
                 </div>
-                 <div id='stock' class="col-md-6">
+                 <!-- <div id='stock' class="col-md-6"> -->
                     <!-- Stock Value -->
-                    <h4 class="bg-success" title="Embed of stock live from https://api.tickertape.in">&nbsp;SHARE MARKET Embed</h4>
-                     <p class="sc-embed" title="Embed from https://api.tickertape.in" data-width="100%" data-orders="%5B%7B%22quantity%22%3A10%2C%22ticker%22%3A%22TATAMOTORS%22%7D%5D" data-cardsize="big" data-withtt="false" data-withsearch="true" style="width:100%;min-height:100%;display:flex;align-items:center;justify-content:center"> <strong>loading widget to trade TATAMOTORS</strong> </p> <script async src="https://www.gateway-tt.in/assets/embed.js"></script>
+                    <!-- <h4 class="bg-success" title="Embed of stock live from https://api.tickertape.in">&nbsp;SHARE MARKET Embed</h4>
+                     <p class="sc-embed" title="Embed from https://api.tickertape.in" data-width="100%" data-orders="%5B%7B%22quantity%22%3A10%2C%22ticker%22%3A%22TATAMOTORS%22%7D%5D" data-cardsize="big" data-withtt="false" data-withsearch="true" style="width:100%;min-height:100%;display:flex;align-items:center;justify-content:center"> <strong>loading widget to trade TATAMOTORS</strong> </p> <script async src="https://www.gateway-tt.in/assets/embed.js"></script> -->
 
                     <!-- End Stock Value -->
-                </div> 
+                <!-- </div>  -->
                 <div class="col-md-12 ">
                     <h4 class="bg-success">&nbsp;INTERPERSONAL SKILL</h4>
                     <ul class="list-group">
